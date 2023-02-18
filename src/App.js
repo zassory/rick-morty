@@ -2,6 +2,8 @@ import { useState } from 'react';
 import imageRickMorty from './img/rick-morty.png';
 import './App.css';
 
+import { Characters } from './components/Characters';
+
 function App() {
 
   const [characters, setCharacters] = useState(null);
@@ -19,6 +21,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="title">Rick & Morty</h1>
+        <Characters />
         <img src={imageRickMorty} alt="Rock & Morty" className='img-home' />
         <button onClick={reqApi} className="btn-search">Buscar Personajes</button>
       </header>
