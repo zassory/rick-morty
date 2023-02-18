@@ -1,14 +1,19 @@
+import { useState } from 'react';
 import imageRickMorty from './img/rick-morty.png';
 import './App.css';
 
 function App() {
 
+  const [characters, setCharacters] = useState(null);
+  
   const reqApi = async () => {
       const api = await fetch('https://rickandmortyapi.com/api/character');
       const characterApi = await api.json();
-      console.log(characterApi);
+      
+      setCharacters(characterApi.results);
   }
 
+  console.log(characters);
 
   return (
     <div className="App">
